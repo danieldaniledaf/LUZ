@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>RECUERDOS</title>
+</head>
+
+<audio id="bg-audio" loop>
+    <source src="Until I Found You _with Em Beihold - Stephen Sanchez.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.body.addEventListener("click", function() {
+    const audio = document.getElementById("bg-audio");
+    audio.currentTime = 36; // Minuto de la musica
+    audio.play();
+}, { once: true });
+</script>
+
+<body>
+        <div class="contenedor">
+
+    <div class="cuadro arriba-izquierda">
+        <img src="Manos.jfif">
+        <span class="etiqueta">NUESTRA PRIMERA FOTO JUNTOS </span>
+        
+    </div>
+    <div class="cuadro arriba-derecha">
+        <img src="Estado.jfif">
+        <span class="etiqueta">MI PRIMER ESTADO CONTIGO</span>
+    </div>
+
+    <div class="cuadro arriba-izquierda2">
+        <img src="Sombra1.jfif">
+        <span class="etiqueta">INTENTO DE ESTADO 1</span>
+    </div>
+    <div class="cuadro arriba-derecha2">
+        <img src="Sombra3.jfif">
+        <span class="etiqueta">INTENTO DE ESTADO 3</span>
+    </div>
+    <div class="cuadro centro">
+        <img src="Testigo.jfif">
+        <span class="etiqueta">EL TESTIGO</span>
+    </div>
+    <div class="cuadro centro2">
+        <img src="Sombra2.jfif">
+        <span class="etiqueta">INTENTO DE ESTADO 2</span>
+    
+    </div>
+     
+    </div>
+    <button class="boton-base glitch">MUSICA</button>
+    <button class="boton-base2" onclick="window.location.href='Recuerdos.html'">FIN</button>
+    <button class="boton-base3" onclick="window.location.href='Contenido.html'">INICIO</button>   
+</body>
+
+<style>
+    /* FONDO DIMANICO*/
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(45deg, #ebee52, #e78f3c, #232fd5, #2376d5);
+    background-size: 400% 400%;
+    animation: fondo-dinamico 6s ease infinite;
+}
+@keyframes fondo-dinamico {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+/*CUADROS*/
+
+
+.contenedor{
+    position:relative;
+    width:80%;
+    height:80vh;
+}
+
+/* estilo de los cuadros */
+
+.cuadro{
+    position:absolute;
+    width:250px;
+    height:250px;
+    overflow:hidden;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+    opacity:0;
+    transform:scale(0.5);
+    animation:aparecer 1s forwards;
+}
+
+.cuadro img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* posiciones */
+
+.arriba-izquierda{
+    top:5%;
+    left:5%;
+    animation-delay:0.5s;
+}
+.arriba-izquierda2{
+    top:60%;
+    left:5%;
+    animation-delay:0.5s;
+}
+
+.arriba-derecha{
+    top:5%;
+    right:-20%;
+    animation-delay:1.5s;
+}
+.arriba-derecha2{
+    top:60%;
+    right:-20%;
+    animation-delay:1.5s;
+}
+
+.centro{
+    top:5%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0.5);
+    animation-delay:2.5s;
+}
+.centro2{
+    top:60%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0.5);
+    animation-delay:2.5s;
+}
+
+/* animación */
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:scale(0.5);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+.cuadro:hover{
+    transform:scale(1.1);
+    transition:0.3s;
+}
+
+/* etiqueta */
+
+.etiqueta{
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,0.6);
+    color:white;
+    text-align:center;
+    padding:6px;
+    font-size:14px;
+    font-weight:bold;
+}
+/*BTN*/
+.boton-base{
+    position:fixed;   /* 👈 fijo en la pantalla */
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    
+    padding:12px 30px;
+    font-size:16px;
+    border:none;
+    border-radius:30px;
+    background:#ff4b6e;
+    color:white;
+    cursor:pointer;
+    z-index:1000;
+}
+.boton-base2{
+    position:fixed;   /* 👈 fijo en la pantalla */
+    bottom:20px;
+    left:90%;
+    transform:translateX(-50%);
+    
+    padding:12px 30px;
+    font-size:16px;
+    border:none;
+    border-radius:30px;
+    background:#2e31ff;
+    color:white;
+    cursor:pointer;
+    z-index:1000;
+}
+.boton-base3{
+    position:fixed;   /* 👈 fijo en la pantalla */
+    bottom:20px;
+    left:10%;
+    transform:translateX(-50%);
+    
+    padding:12px 30px;
+    font-size:16px;
+    border:none;
+    border-radius:30px;
+    background:#2eff4a;
+    color:white;
+    cursor:pointer;
+    z-index:1000;
+}
+
+.boton-base:hover{
+    background:#ff2e55;
+    transform:translateX(-50%) scale(1.1);
+    transition:0.3s;
+}
+.boton-base2:hover{
+    background:#2e31ff;
+    transform:translateX(-50%) scale(1.1);
+    transition:0.3s;
+}
+.boton-base3:hover{
+    background:#2eff4a;
+    transform:translateX(-50%) scale(1.1);
+    transition:0.3s;
+}
+
+/*BTN DINAMICO*/
+.glitch:hover {
+  animation: glitch 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-4px, 4px);
+  }
+  40% {
+    transform: translate(-4px, -4px);
+  }
+  60% {
+    transform: translate(4px, 4px);
+  }
+  80% {
+    transform: translate(4px, -4px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+</style>
+
+</html>

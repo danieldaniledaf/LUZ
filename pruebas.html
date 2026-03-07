@@ -1,0 +1,90 @@
+<div class="contenedor">
+
+    <div class="cuadro arriba-izquierda">
+        <img src="Manos.jfif">
+    </div>
+
+    <div class="cuadro arriba-derecha">
+        <img src="Luz.png">
+    </div>
+
+    <div class="cuadro centro">
+        <img src="Luz.png">
+    </div>
+
+</div>
+
+<style>
+    body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#111;
+}
+
+.contenedor{
+    position:relative;
+    width:80%;
+    height:80vh;
+}
+
+/* estilo de los cuadros */
+
+.cuadro{
+    position:absolute;
+    width:200px;
+    height:200px;
+    overflow:hidden;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+    opacity:0;
+    transform:scale(0.5);
+    animation:aparecer 1s forwards;
+}
+
+.cuadro img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* posiciones */
+
+.arriba-izquierda{
+    top:0;
+    left:0;
+    animation-delay:0.5s;
+}
+
+.arriba-derecha{
+    top:0;
+    right:0;
+    animation-delay:1.5s;
+}
+
+.centro{
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0.5);
+    animation-delay:2.5s;
+}
+
+/* animación */
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:scale(0.5);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+.cuadro:hover{
+    transform:scale(1.1);
+    transition:0.3s;
+}
+</style>
